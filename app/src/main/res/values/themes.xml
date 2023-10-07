@@ -5,5 +5,5 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.KaelWebRTCImpelementation" parent="Base.Theme.KaelWebRTCImpelementation" />
+    <style name="Theme.KaelWebRTCImplementation" parent="Base.Theme.KaelWebRTCImpelementation" />
 </resources>

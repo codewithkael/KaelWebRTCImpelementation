@@ -1,4 +1,4 @@
-package com.codewithkael.kaelwebrtcimpelementation
+package com.codewithkael.kaelwebrtcimplementation
 
 import org.junit.Test
 

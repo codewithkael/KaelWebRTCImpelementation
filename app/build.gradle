@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.codewithkael.kaelwebrtcimpelementation'
+    namespace 'com.codewithkael.kaelwebrtcimplementation'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.codewithkael.kaelwebrtcimpelementation"
+        applicationId "com.codewithkael.kaelwebrtcimplementation"
         minSdk 24
         targetSdk 33
         versionCode 1
