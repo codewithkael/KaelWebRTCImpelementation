@@ -1,14 +1,21 @@
 package com.codewithkael.kaelwebrtcimplementation
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.codewithkael.androidwebrtc.WebrtcClient
+import androidx.appcompat.app.AppCompatActivity
+import com.codewithkael.kaelwebrtcimplementation.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var views: ActivityMainBinding
+    private lateinit var mainViewModel: MainViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        val webrtcClient = WebrtcClient()
-        webrtcClient.test(this)
+        views = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(views.root)
+        mainViewModel = MainViewModel(application)
+        mainViewModel.init()
+        mainViewModel.attachViewGroup(views.frameLayout)
+
     }
+
 }
