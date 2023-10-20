@@ -6,12 +6,16 @@ import androidx.lifecycle.AndroidViewModel
 import com.codewithkael.androidwebrtc.WebrtcClient
 import com.codewithkael.androidwebrtc.utils.IceServer
 import com.codewithkael.androidwebrtc.webrtc.WebRTCPacketListener
+import com.codewithkael.webrtcprojectforrecord.models.MessageModel
+import com.codewithkael.webrtcprojectforrecord.utils.NewMessageInterface
 
 class MainViewModel(private val application: Application)
-    : AndroidViewModel(application), WebRTCPacketListener {
+    : AndroidViewModel(application), WebRTCPacketListener, NewMessageInterface {
 
     private lateinit var webrtcClient:WebrtcClient
+    private lateinit var socketRepository: SocketRepository
     fun init(){
+        socketRepository = SocketRepository(this)
          webrtcClient = WebrtcClient(application,
             listOf(
                 IceServer(
@@ -27,7 +31,16 @@ class MainViewModel(private val application: Application)
 
     }
 
+    override fun onCleared() {
+        super.onCleared()
+        webrtcClient.onDestroy()
+    }
+
     override fun onPacketGenerated(packet: String) {
+
+    }
+
+    override fun onNewMessage(message: MessageModel) {
 
     }
 }
